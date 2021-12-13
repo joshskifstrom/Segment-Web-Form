@@ -52,6 +52,21 @@
         analytics.track('destination submitted', user, function() {
             window.location.href = "";
         });
+        analytics.page("Form Page", "Home");
+        
+        [[SEGAnalytics sharedAnalytics] screen:@"Home"
+                            properties:@{ @"Feed Type": @"private" }];
+  
+        analytics.group("0e8c78ea9d97a7b8185e8632", {
+          name: "Initech",
+          industry: "Technology",
+          employees: 329,
+          plan: "enterprise",
+          "total billed": 830
+        });
+        
+        analytics.alias("1234");
+            
       }
 </script>
 
