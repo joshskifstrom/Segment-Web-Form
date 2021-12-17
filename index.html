@@ -49,13 +49,34 @@
             email: email, 
             name: fullname
         });
-        analytics.track('destination submitted', user, function() {
-            window.location.href = "";
+        // analytics.track('destination submitted', user, function() {
+        //     window.location.href = "";
+        
+        analytics.track("User Registered", {
+          "context": {
+            "library": {
+              "name": "analytics.js",
+              "version": "2.11.1"
+            },
+            "page": {
+              "path": "/academy/",
+              "referrer": "",
+              "search": "",
+              "title": "Analytics Academy",
+              "url": "https://segment.com/academy/"
+            },
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.86 Safari/537.36",
+            "ip": "108.0.78.21"
+          },
+          "properties": {
+            "title": "Intro to Analytics"
+          }
         });
+
         analytics.page("Form Page", "Home");
-        //Only used for mobile apps, not embedded in HTML
-        //[[SEGAnalytics sharedAnalytics] screen:@"Home"
-        //                    properties:@{ @"Feed Type": @"private" }];
+        
+        // [[SEGAnalytics sharedAnalytics] screen:@"Home"
+        //                     properties:@{ @"Feed Type": @"private" }];
   
         analytics.group("0e8c78ea9d97a7b8185e8632", {
           name: "Initech",
@@ -66,6 +87,9 @@
         });
         
         analytics.alias("1234");
+        
+        [[SEGAnalytics sharedAnalytics] screen:@"Home"
+                            properties:@{ @"Feed Type": @"private" }];
             
       }
 </script>
