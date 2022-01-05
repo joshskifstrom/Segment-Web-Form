@@ -28,6 +28,8 @@
     <br><br> 
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
+    Phone Number: <input name="phoneNumber" required="" size="75" type="tel"/> 
+    <br><br>  
     <input name="submit" type="submit" value="submit"/>
 </form> 
     
@@ -37,17 +39,20 @@
         var form = e.target;
         var email = form["email"].value;
         var fullname = form["fullname"].value;
+        var phoneNumber = form["phoneNumber"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
         var user = {
             email: email, 
             name: fullname, 
+            phoneNumber: phoneNumber,
             destination: destination, 
             details: details
         };
-        analytics.identify('1234', {
+        analytics.identify('2345', {
             email: email, 
-            name: fullname
+            name: fullname,
+            phoneNumber: phoneNumber
         });
         // analytics.track('destination submitted', user, function() {
         //     window.location.href = "";
@@ -88,8 +93,8 @@
         
         analytics.alias("1234");
         
-//         [[SEGAnalytics sharedAnalytics] screen:@"Home"
-//                             properties:@{ @"Feed Type": @"private" }];
+        [[SEGAnalytics sharedAnalytics] screen:@"Home"
+                            properties:@{ @"Feed Type": @"private" }];
             
       }
 </script>
