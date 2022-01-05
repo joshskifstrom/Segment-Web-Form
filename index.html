@@ -54,8 +54,6 @@
             name: fullname,
             phoneNumber: phoneNumber
         });
-        // analytics.track('destination submitted', user, function() {
-        //     window.location.href = "";
         
         analytics.track("User Registered", {
           "context": {
@@ -80,21 +78,24 @@
 
         analytics.page("Form Page", "Home");
         
-        // [[SEGAnalytics sharedAnalytics] screen:@"Home"
-        //                     properties:@{ @"Feed Type": @"private" }];
-  
-        analytics.group("0e8c78ea9d97a7b8185e8632", {
-          name: "Initech",
+        analytics.group("0e8c78ea9d97a7b8185e8633", {
+          name: "Greater Biz, Inc.",
           industry: "Technology",
-          employees: 329,
+          employees: 343,
           plan: "enterprise",
-          "total billed": 830
+          "total billed": 880
         });
         
-        analytics.alias("1234");
+        analytics.alias("2345");
         
-        [[SEGAnalytics sharedAnalytics] screen:@"Home"
-                            properties:@{ @"Feed Type": @"private" }];
+        //         [[SEGAnalytics sharedAnalytics] screen:@"Home"
+        //                             properties:@{ @"Feed Type": @"private" }];
+
+        // [[SEGAnalytics sharedAnalytics] screen:@"Home"
+        //                     properties:@{ @"Feed Type": @"private" }];
+
+        // analytics.track('destination submitted', user, function() {
+        //     window.location.href = "";
             
       }
 </script>
