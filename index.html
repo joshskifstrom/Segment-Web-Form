@@ -30,8 +30,7 @@
     <br><br>
     Phone Number: <input name="phoneNumber" required="" size="75" type="tel"/> 
     <br><br>
-    <br><br>
-    Registration Fee: <input name="registrationFee" required="" size="75" type="number"/> 
+    Registration Fee: <input name="registrationFee" required="" size="75" type="number" min="1" step="any"/> 
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
@@ -55,7 +54,7 @@
             registration_fee: registrationFee
         };
         
-        analytics.identify('4567', {
+        analytics.identify(getRandomInt(1000000), {
             email: email, 
             name: fullname,
             phone_number: phoneNumber
