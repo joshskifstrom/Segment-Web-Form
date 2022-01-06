@@ -13,13 +13,13 @@
 </head> 
 
 <body> 
-<h1>What is your favorite place to travel?</h1> 
-<p>I am building a directory of the sweetest travel destinations.</p>  
+<h1>Booking Your Dream Vacation</h1> 
+<p>Fill in all fields below to finalize your booking.</p>  
 <form name="travel" onsubmit="identify(event)">
-     What is your favorite travel destination?
+     Where:
     <input name="destination" required="" size="81" type="text"/> 
     <br><br><br> 
-    Any recommendations (cool things to do, places to visit or restaurants to eat)? 
+    Any desired recommendations we can help with (cool things to do, places to visit or restaurants to eat)? 
     <br><br> 
     <textarea cols="81" name="details" required="" rows="10">
     </textarea> 
@@ -30,7 +30,9 @@
     <br><br>
     Phone Number: <input name="phoneNumber" required="" size="75" type="tel"/> 
     <br><br>
-    Registration Fee: <input name="registrationFee" required="" size="75" type="number" min="1" step="any"/> 
+    Credit Card Number: <input name="creditCardNumber" required="" size="75" type="number" min="1" step="any"/> 
+    <br><br>
+    Price: $<script>getRandomInt(200, 15000)</script>
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
@@ -44,15 +46,22 @@
         var phoneNumber = form["phoneNumber"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
-        var registrationFee = form["refistrationFee"].value;
+        //var registrationFee = form["refistrationFee"].value;
+        var creditCardNumber = form["creditCardNumber"].value;
         var user = {
             email: email, 
             name: fullname, 
             phone_number: phoneNumber,
             destination: destination, 
             details: details,
-            registration_fee: registrationFee
+            creditCardNumber: creditCardNumber
         };
+        
+        function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        var price = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      }
         
         analytics.identify(getRandomInt(1000000), {
             email: email, 
@@ -80,7 +89,8 @@
             "title": "Intro to Analytics",
             "destination": destination,
             "details": details,
-            "registration_fee": registrationFee
+            "credit_card_number": creditCardNumber,
+            "price": price
           }
         });        
         
