@@ -32,13 +32,21 @@
     <br><br>
     Credit Card Number: <input name="creditCardNumber" required="" size="75" type="text"/> 
     <br><br>
-    Price: <span></span>
+    Price: <input name="price" id="priceValue" required="" size="75" type="number"/>
+    <script type="text/javascript">
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+      }
+      document.getElementById("priceValue").value = getRandomInt(200, 15000);
+    </script>
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
     
 <script type="text/javascript">
-  
+
       function identify(e){
         e.preventDefault();
         var form = e.target;
@@ -49,7 +57,8 @@
         var details = form["details"].value;
         //var registrationFee = form["refistrationFee"].value;
         var creditCardNumber = form["creditCardNumber"].value;
-        var price = form["price"].value = getRandomInt(200, 15000);
+        
+        var price = form["price"].value;
         var user = {
             email: email, 
             name: fullname, 
@@ -58,12 +67,6 @@
             details: details,
             creditCardNumber: creditCardNumber
         };
-        
-        function getRandomInt(min, max) {
-          min = Math.ceil(min);
-          max = Math.floor(max);
-          return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-        }
         
         //var price = getRandomInt(200, 15000);
         
@@ -90,7 +93,7 @@
             "ip": "108.0.78.21"
           },
           "properties": {
-            "title": "Intro to Analytics",
+            "title": "Purchased Trip",
             "destination": destination,
             "details": details,
             "credit_card_number": creditCardNumber,
