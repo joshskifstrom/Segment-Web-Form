@@ -49,6 +49,7 @@
         var details = form["details"].value;
         //var registrationFee = form["refistrationFee"].value;
         var creditCardNumber = form["creditCardNumber"].value;
+        var price = form["price"].value = getRandomInt(200, 15000);
         var user = {
             email: email, 
             name: fullname, 
@@ -64,7 +65,7 @@
           return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
         }
         
-        var price = getRandomInt(200, 15000);
+        //var price = getRandomInt(200, 15000);
         
         analytics.identify(getRandomInt(1000000), {
             email: email, 
