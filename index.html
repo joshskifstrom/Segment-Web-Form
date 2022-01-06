@@ -30,14 +30,15 @@
     <br><br>
     Phone Number: <input name="phoneNumber" required="" size="75" type="tel"/> 
     <br><br>
-    Credit Card Number: <input name="creditCardNumber" required="" size="75" type="number" min="1" step="any"/> 
+    Credit Card Number: <input name="creditCardNumber" required="" size="75" type="text"/> 
     <br><br>
-    Price: $<script>getRandomInt(200, 15000)</script>
+    Price: <span></span>
     <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
     
 <script type="text/javascript">
+  
       function identify(e){
         e.preventDefault();
         var form = e.target;
@@ -58,10 +59,12 @@
         };
         
         function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        var price = Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
-      }
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+        }
+        
+        var price = getRandomInt(200, 15000);
         
         analytics.identify(getRandomInt(1000000), {
             email: email, 
