@@ -29,7 +29,10 @@
     Email: <input name="email" required="" size="75" type="email"/> 
     <br><br>
     Phone Number: <input name="phoneNumber" required="" size="75" type="tel"/> 
-    <br><br>  
+    <br><br>
+    <br><br>
+    Registration Fee: <input name="registrationFee" required="" size="75" type="number"/> 
+    <br><br>
     <input name="submit" type="submit" value="submit"/>
 </form> 
     
@@ -42,12 +45,14 @@
         var phoneNumber = form["phoneNumber"].value;
         var destination = form["destination"].value;
         var details = form["details"].value;
+        var registrationFee = form["refistrationFee"].value;
         var user = {
             email: email, 
             name: fullname, 
             phone_number: phoneNumber,
             destination: destination, 
-            details: details
+            details: details,
+            registration_fee: registrationFee
         };
         
         analytics.identify('4567', {
@@ -75,7 +80,8 @@
           "properties": {
             "title": "Intro to Analytics",
             "destination": destination,
-            "details": details
+            "details": details,
+            "registration_fee": registrationFee
           }
         });        
         
