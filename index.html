@@ -48,7 +48,6 @@
         return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
       }
 
-
       document.getElementById("phoneNumberValue").value = getRandomPhoneNum();
       document.getElementById("creditCardNumberValue").value = getRandomCreditCardNum();
       document.getElementById("priceValue").value = getRandomInt(200, 15000);
@@ -116,7 +115,7 @@
           }
         });        
         
-        analytics.page("Form Page", "Home");
+        analytics.page("Form Page", "Home", {utm: "www.formdestination.com"});
         
         analytics.group("0e8c78ea9d97a7b8185e8633", {
           name: "Greater Biz, Inc.",
