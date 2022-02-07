@@ -1,0 +1,24 @@
+{
+  "type": "module",
+  "name": "segment-test-one.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "name.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshskifstrom/segment-test-one.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshskifstrom/segment-test-one.github.io/issues"
+  },
+  "homepage": "https://github.com/joshskifstrom/segment-test-one.github.io#readme",
+  "dependencies": {
+    "dotenv": "^14.3.2",
+    "node-fetch": "^2.6.7"
+  }
+}
